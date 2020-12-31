@@ -10,7 +10,7 @@ set('application', 'my_project');
 set('repository', 'https://github.com/Nke0628/dev_pra.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true);
+set('git_tty', false);
 
 // Set Composer
 set('composer_options', '{{composer_action}} --verbose --prefer-dist --no-progress --no-interaction --optimize-autoloader --no-suggest');
