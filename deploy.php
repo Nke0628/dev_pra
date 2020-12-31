@@ -23,21 +23,25 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('133.125.36.201')
-    ->port(22)
-    ->user('vpsuser')
-    ->stage('staging')
-    ->set('branch', 'staging')
-    ->identityFile('~/.ssh/dev_pra')
-    ->set('deploy_path', '/home/www/html/staging');
 
-host('133.125.36.201')
+
+host('production')
+    ->hostname('133.125.36.201')
     ->port(22)
     ->user('vpsuser')
     ->stage('production')
     ->set('branch', 'master')
     ->identityFile('~/.ssh/dev_pra')
     ->set('deploy_path', '/home/www/html/production');
+
+host('staging')
+    ->hostname('133.125.36.201')
+    ->port(22)
+    ->user('vpsuser')
+    ->stage('staging')
+    ->set('branch', 'staging')
+    ->identityFile('~/.ssh/dev_pra')
+    ->set('deploy_path', '/home/www/html/staging');
 
 // Tasks
 
