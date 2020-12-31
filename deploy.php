@@ -34,7 +34,7 @@ host('production')
     ->user('vpsuser')
     ->stage('production')
     ->set('branch', 'master')
-    ->identityFile('/home/vpsuser/.ssh/dev_pra')
+    ->identityFile('~/.ssh/dev_pra')
     ->set('deploy_path', '/home/www/html/production');
 
 host('staging')
@@ -43,7 +43,7 @@ host('staging')
     ->user('vpsuser')
     ->stage('staging')
     ->set('branch', 'staging')
-    ->identityFile('/home/vpsuser/.ssh/dev_pra')
+    ->identityFile('~/.ssh/dev_pra')
     ->set('deploy_path', '/home/www/html/staging');
 
 // Tasks
