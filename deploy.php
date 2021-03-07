@@ -65,13 +65,16 @@ task('deploy', [
     'success'
 ]);
 
-desc('test_task');
-task('test_task', function () {
-    $result = run('cd /var/www/html; pwd');
-    writeln("Current dir: $result");
+task('npm:run', function () {
+    run('cd {{release_path}} && npm install');
+    if (input()->getArgument('stage') === 'production') {
+        run('cd {{release_path}} && npm run production');
+    } else {
+        run('cd {{release_path}} && npm run development');
+    }
 });
 
-after('deploy', 'test_task');
+after('deploy', 'npm:run');
 
 // [Optional] If deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
