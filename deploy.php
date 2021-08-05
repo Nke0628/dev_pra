@@ -74,7 +74,7 @@ task('deploy', [
 //    }
 //});
 
-after('deploy', 'npm:run');
+//after('deploy', 'npm:run');
 
 // [Optional] If deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
