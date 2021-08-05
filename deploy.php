@@ -65,14 +65,14 @@ task('deploy', [
     'success'
 ]);
 
-task('npm:run', function () {
-    run('cd {{release_path}} && npm install');
-    if (input()->getArgument('stage') === 'production') {
-        run('cd {{release_path}} && npm run production');
-    } else {
-        run('cd {{release_path}} && npm run development');
-    }
-});
+//task('npm:run', function () {
+//    run('cd {{release_path}} && npm install');
+//    if (input()->getArgument('stage') === 'production') {
+//        run('cd {{release_path}} && npm run production');
+//    } else {
+//        run('cd {{release_path}} && npm run development');
+//    }
+//});
 
 after('deploy', 'npm:run');
 
